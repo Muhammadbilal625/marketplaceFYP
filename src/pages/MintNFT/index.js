@@ -28,7 +28,7 @@ import MetaMaskExtensionModel from "../../components/MetaMaskExtensionModel";
 import AppContext from "../../AppContext";
 
 import { marketplaceAddress } from "../../config";
-import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import { NFTMarketplace } from "../../../NFTMarketplace";
 const ipfsClient = require("ipfs-http-client");
 const projectId = "2QjDGpt8fTC86RyunyZGq9PV9s5";
 const projectSecret = "bf2c2c5012140c7b91716b453898cd02";

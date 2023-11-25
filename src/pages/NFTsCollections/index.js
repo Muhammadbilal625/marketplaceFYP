@@ -21,7 +21,7 @@ import { NFTsCollectionData } from "../../NFTsData/NFTsCollectionData";
 import Image from "next/image";
 import { ethers } from "ethers";
 import { marketplaceAddress } from "../../config";
-import NFT from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import { NFTMarketplace as NFT } from "../../../NFTMarketplace";
 import axios from "axios";
 import { parseEther } from "ethers/lib/utils";
 
@@ -191,7 +191,7 @@ function NFTsCollections() {
               const meta = await axios.get(tokenUri);
               console.log("metadata is ", meta);
               let item = {
-                price: parseFloat(parseInt(element.price) / 10 ** 18),
+                price: (element.price),
                 tokenId: element.tokenId,
                 seller: element.seller,
                 owner: element.owner,
@@ -236,7 +236,7 @@ function NFTsCollections() {
       setLoaderMessage("Paying " + nft.price + " MATIC " + "to buy the NFT");
 
       let tx = await marketContract.purchaseToken(nft.tokenId, {
-        value: parseEther("" + nft.price),
+        value: nft.price,
       });
       await tx.wait();
       alert("Bought NFT Successfully 🎉");
@@ -428,7 +428,7 @@ function NFTsCollections() {
                             gutterBottom
                             variant="h6"
                             component="div">
-                            {e.price} ETH
+                            {(e.price)/10**18} MATIC
                           </Typography>
                         </CardContent>
                         <CardActions>

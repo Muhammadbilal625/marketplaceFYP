@@ -14,7 +14,8 @@ import MetaMaskExtensionModel from "../../components/MetaMaskExtensionModel";
 import AppContext from "../../AppContext";
 
 import { marketplaceAddress } from "../../config";
-import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import { NFTMarketplace } from "../../../NFTMarketplace";
+
 import makeStyles from "@mui/styles/makeStyles";
 
 const useStyles = makeStyles({
@@ -94,10 +95,11 @@ export default function AccountDashBoard() {
 
     const items = await Promise.all(
       data.map(async (i) => {
+        console.log("nft is ",i);
         const tokenUri = await tokenContract.tokenURI(i.tokenId);
         // we want get the token metadata - json
         const meta = await axios.get(tokenUri);
-        let price = ethers.utils.formatUnits(i.price.toString(), "ether");
+        let price = parseFloat(i.price)
         let item = {
           price,
           tokenId: i.tokenId.toNumber(),
@@ -166,7 +168,7 @@ export default function AccountDashBoard() {
                                 variant='h6'
                                 component='div'
                               >
-                                {nft.price} ETH
+                                {nft.price} MATIC
                               </Typography>
                             </Box>
                             <Box sx={{ display: "flex" }}>

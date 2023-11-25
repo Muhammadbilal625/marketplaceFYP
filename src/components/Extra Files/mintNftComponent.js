@@ -15,7 +15,6 @@
 // import AppContext from "../../AppContext";
 
 // import { marketplaceAddress } from "../../config";
-// import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 
 // import makeStyles from "@mui/styles/makeStyles";
 

@@ -20,8 +20,7 @@ import axios from "axios";
 import Web3Modal from "web3modal";
 
 import { marketplaceAddress } from "../../config";
-import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
-
+import { NFTMarketplace } from "../../../NFTMarketplace";
 import makeStyles from "@mui/styles/makeStyles";
 
 const useStyles = makeStyles({

@@ -11,8 +11,7 @@ import { useRouter } from "next/router";
 // import { create as ipfsHttpClient } from "ipfs-http-client";
 
 import { marketplaceAddress } from "../../config";
-import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
-
+import { NFTMarketplace } from "../../../NFTMarketplace";
 // in this component we set the ipfs up to host our nft data of
 // file storage
 

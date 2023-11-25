@@ -19,7 +19,7 @@ import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import Web3Modal from "web3modal";
 import { marketplaceAddress } from "../../config";
-import NFT from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import { NFTMarketplace as NFT } from "../../../NFTMarketplace";
 import AppContext from "../../AppContext";
 import makeStyles from "@mui/styles/makeStyles";
 import { parseEther } from "ethers/lib/utils";
@@ -102,7 +102,7 @@ export default function MyAssets() {
         const meta = await axios.get(tokenUri);
         console.log("metadata is ", meta);
         let item = {
-          price: 0,
+          price:null,
           tokenId: tokenId,
           seller: null,
           owner: walletAddress,
@@ -136,14 +136,14 @@ export default function MyAssets() {
         signer
       );
       let listingPrice = await marketContract.getListingPrice();
-      listingPrice=parseFloat(parseInt(listingPrice)/10**18)+'';
+      listingPrice=parseFloat(parseFloat(listingPrice)/10**18)+'';
      console.log(listingPrice);
       
       
 
       setLoaderMessage("Listing Price is Getting Paid...");
 
-      let tx = await marketContract.makeMarketToken(listingToken.tokenId,parseEther(listingToken.price), {
+      let tx = await marketContract.makeMarketToken(listingToken.tokenId,parseEther(""+listingToken.price), {
         value:parseEther(listingPrice)
       }
       
@@ -200,13 +200,13 @@ export default function MyAssets() {
                                 component="div">
                                 {nft.name}
                               </Typography>
-                              <Typography
+                              {/* <Typography
                                 sx={{ color: "red" }}
                                 gutterBottom
                                 variant="h6"
                                 component="div">
-                                {nft.price} ETH
-                              </Typography>
+                                {nft.price} MATIC
+                              </Typography> */}
                             </Box>
                             <Box sx={{ display: "flex" }}>
                               <Typography
@@ -272,7 +272,7 @@ export default function MyAssets() {
               value={listingToken.tokenId}
             />
             <TextField
-              label={"Listing Price in ETH"}
+              label={"Listing Price in MATIC"}
               onChange={(e) =>
                 setListingToken({ ...listingToken, price: e.target.value })
               }

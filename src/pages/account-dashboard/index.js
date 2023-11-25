@@ -25,8 +25,6 @@ export default function AccountDashBoardPage() {
 // import axios from "axios";
 // import Web3Modal from "web3modal";
 // import { nftaddress, marketplaceAddress } from "../../config";
-// import NFT from "../../../backend/artifacts/contracts/NFT.sol/NFT.json";
-// import HASHMarket from "../../../backend/artifacts/contracts/HASHMarket.sol/HASHMarket.json";
 // import MetaMaskExtensionModel from "../../components/MetaMaskExtensionModel";
 // import AppContext from "../../AppContext";
 

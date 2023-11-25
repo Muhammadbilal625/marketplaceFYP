@@ -18,7 +18,6 @@
 // import { ethers } from "ethers";
 // import axios from "axios";
 // import { marketplaceAddress } from "../../config";
-// import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
 // import Web3Modal from "web3modal";
 
 // const useStyles = makeStyles({

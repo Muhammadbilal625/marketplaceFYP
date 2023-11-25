@@ -19,7 +19,7 @@ import Image from "next/image";
 import makeStyles from "@mui/styles/makeStyles";
 
 import { marketplaceAddress } from "../../config";
-import NFTMarketplace from "../../../backend/artifacts/contracts/NFTMarketplace.sol/NFTMarketplace.json";
+import { NFTMarketplace } from "../../../NFTMarketplace";
 import Head from "next/head";
 
 

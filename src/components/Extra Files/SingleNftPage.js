@@ -16,7 +16,6 @@
 
 // import Web3Modal from "web3modal";
 // import { nftaddress, marketplaceAddress } from "../../config";
-// import HASHMarket from "../../../backend/artifacts/contracts/HASHMarket.sol/HASHMarket.json";
 
 // import makeStyles from "@mui/styles/makeStyles";
 
